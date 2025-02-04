@@ -1,0 +1,12 @@
+function beforeSubmit(){
+    let opDate = document.getElementById("op_lead_date");
+    let ipDate = document.getElementById("ip_lead_date"); //Here the input date is a string
+    //So we need to convert it into date fromat as per the locale of the user who is the default lead owner
+    //To check the default lead owner, go to web-to-lead under setup
+    //To check locale, run code, Sytem.debug(userInfo.getLocale());
+
+    let formattedDate = new Date(ipDate.value).toLocaleDateString("en-IN");
+    opDate.value = formattedDate;
+    
+
+}
